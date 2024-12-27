@@ -1,0 +1,817 @@
+/* General Styles */
+body {
+  overflow: auto;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.hidescroll {
+  overflow: hidden!important;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(62, 62, 62);
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+.display {
+  opacity: 1!important;
+}
+.catchphrase {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color:darkgoldenrod;
+  
+}
+.container {
+  width: auto;
+  max-width: 1300px;
+  padding-right: var(--bs-gutter-x,.75rem);
+  padding-left: var(--bs-gutter-x,.75rem);
+  margin-right: auto;
+  margin-left: auto;
+}
+.contact .row {
+  width: 100%;
+}
+.row {
+  display: flex;
+  z-index: 1;
+}
+.img-fluid {
+  max-width: 60%;
+  width: 50%;
+}
+.text-center {
+  text-align: center;
+}
+.bgred {
+  background-color: red;
+}
+.btn {
+  outline: 0;
+  border: 0;
+  font-size: 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  color:white;
+  font-weight: 500;
+  z-index: 1;
+  background-color: hsl(51, 70%, 45%);
+  padding:  10px 50px;
+  margin: 0 0.5rem;
+}
+
+.col-md-12 {
+  width: 100%;
+}
+.col-md-6 {
+  width: 60.9%;
+}
+.col-md-3 {
+  margin: 0 1rem!important;
+  width:100%;
+}
+
+.col-md-4 {
+  width:33.3%;
+}
+.col-md-4:first-child {
+  margin-right: 1rem;
+
+}
+.col-md-4:last-child {
+  margin-left: 1rem;
+
+}
+
+.x {
+  margin: 0rem 1rem!important;
+  width:33.3%;
+}
+
+/* Navbar */
+.navopened {
+  background-color: #010606!important;
+}
+.navopened .logo {
+  color: #fafafa!important;
+}
+.navopened ul li a {
+  color: #fafafa!important;
+}
+.navopened .burger {
+  background-color: #010606!important;
+}
+.navbar {
+  transition: background-color 0.4s;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 0.5rem;
+  background-color: transparent;
+  z-index: 2;
+  backdrop-filter: blur(2px);
+  display: flex; /* Use flexbox to arrange items */
+  justify-content: space-between; /* Space between logo and menu */
+  align-items: center;
+}
+
+/* Center the logo in the navbar */
+.navbar .logo {
+  display: flex;
+  justify-content: flex-start; /* Keep logo aligned to the left */
+  align-items: center; 
+  color: rgb(243, 243, 243);
+  letter-spacing: 2px;
+  font-weight: 400;
+  margin: 0;
+  font-size: 28px;
+  padding-top: 10px;
+}
+
+/* Ensure logo image fits properly */
+.navbar .logo img {
+  max-width: 100%;
+  height: auto;
+  max-height: 50px;
+}
+
+/* Navbar items */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end; /* Align the items to the far right */
+  margin: 0;
+  padding: 0;
+  flex-grow: 1; /* Ensure it takes up remaining space */
+  text-align: right;
+}
+
+.navbar ul li {
+  margin: 0 1rem;
+  display: inline-block;
+}
+
+.navbar ul li a {
+  font-size: 20px;
+  color: rgb(243, 243, 243);
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+/* Burger icon */
+.button {
+  cursor: pointer;
+  transition: transform 0.2s linear;
+  position: fixed;
+  transform: translateX(300%);
+  top: 20px;
+  right: 15px;
+  z-index: 1;
+}
+
+.burger {
+  transition: all 0.2s;
+  margin-bottom: 0.45rem;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+}
+
+/* Mobile responsiveness adjustments */
+@media (max-width: 768px) {
+  .navbar .logo img {
+    max-height: 40px;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    display: block;
+    text-align: right; /* Align the items to the right on mobile */
+    margin: 0;
+    padding-top: 2rem;
+  }
+  
+  .navbar ul li {
+    margin: 1rem 0;
+  }
+  
+  .navbar ul li a {
+    color: #fafafa;
+  }
+  
+  .navbar {
+    backdrop-filter: none;
+    padding: 10px 0;
+  }
+  
+  .navbar ul {
+    backdrop-filter: blur(20px);
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    text-align: right;
+    margin: 0;
+    padding-top: 10rem;
+    transform: translateX(-100%);
+  }
+  
+  .navbar ul li {
+    margin: 2rem 0rem;
+    display: block;
+  }
+  
+  .navbar ul li a {
+    cursor: pointer;
+    font-size: 20px;
+    text-decoration: none;
+    color: #fafafa;
+    font-weight: 500;
+  }
+  
+  .burger {
+    background-color: #fafafa;
+  }
+}
+
+/* Header */
+video {
+  top: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: -1;
+}
+
+.headerbg {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: 0;
+  top: 0;
+  background-color: black;
+  opacity: 0.7;
+}
+
+header {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+  z-index: 1;
+  color: white;
+  font-size: 64px;
+}
+
+.opened {
+  transform: translateX(0%)!important;
+}
+
+/* Main */
+.main-title {
+  font-size: 48px;
+  color: hsl(51, 70%, 45%);
+}
+.main-p {
+  font-size: 22px;
+  font-weight: 100;
+}
+main {
+  padding: 3rem 0;
+  background-color: #fafafa;
+  width: 100%;
+}
+
+/* Footer */
+.text-white {
+  color: white;
+}
+.footer-top {
+  margin: 0;
+  padding: 0.1rem 0;
+  background-color: #01bf71;
+}
+.footer-top p {
+  font-size: 18px;
+}
+.footer-text {
+  margin-top: 2.5px;
+  font-size: 18px;
+  color:#919191;
+}
+footer {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 1rem 0;
+  background-color:#010606;
+}
+.side1 {
+  width: 50%;
+}
+.side2 {
+  width: 50%;
+}
+footer .col-md-3 {
+  height: 100%;
+}
+footer .logo {
+  transition: all 0.2s;
+  margin-bottom: 0;
+  align-items: center;
+  align-content: center;
+  color: rgb(243, 243, 243);
+  letter-spacing: 2px;
+  font-weight: 400;
+  font-size: 28px;
+}
+.logo a {
+  text-decoration: none;
+  color: #fafafa;
+}
+.footer-title {
+  color: #fafafa;
+  font-weight: 600;
+  font-size: 22px;
+  margin-bottom: 0;
+  word-wrap: initial;
+}
+footer ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+footer ul li {
+  font-weight: 100;
+  color: rgb(171, 171, 171);
+  font-size: 18px;
+}
+footer ul li a {
+  color: rgb(171, 171, 171);
+  font-size: 18px;
+}
+footer ul li a:hover {
+  color: #01bf71;
+}
+
+/* Scroll to top button */
+.gotop {
+  display: block;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: hsl(51, 70%, 45%);
+  border-radius: 50%;
+  padding: 1rem;
+  cursor: pointer;
+  z-index: 2;
+}
+.gotop a {
+  text-decoration: none;
+  color: white;
+  font-weight: 100;
+}
+.gotop:hover {
+  background-color: hsl(51, 70%, 45%);
+}
+
+/* Services */
+.card-title {
+  color: hsl(51, 70%, 45%);
+  font-size: 20px;
+}
+.p-3 {
+  padding: 0.2rem 1rem;
+}
+.card-text {
+  padding: 0rem 0rem 1rem 0rem;
+  font-weight: 200;
+  font-size: 18px;
+
+}
+
+.card {
+  cursor: pointer;
+  border-radius: 10px;
+  width: 100%;
+  transition: all 0.2s;
+  background-color: white;
+  box-shadow: 5px 5px 5px 5px #e5e5e5;
+  position: relative; /* Enable positioning for child elements */
+}
+.card:hover {
+  transform:scale(1.03);
+}
+
+.services .col-md-4 {
+  margin: 1rem 1rem 1rem 1rem;
+
+/* Icon Styling for Service Cards */
+.card-icon {
+  display: block;
+  width: 60px; /* Adjust icon size */
+  height: 60px;
+  margin: 0 auto 10px; /* Center icon with margin below */
+  object-fit: contain; /* Ensure the image fits properly */
+}  
+
+/* Input Field for PNG Name/Text */
+.card-input {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 150px; /* Adjust input width as needed */
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+  background-color: #f9f9f9;
+  color: #333;
+  text-align: center; /* Align the text inside the input field */
+}
+
+.card-input:focus {
+  border-color: hsl(51, 70%, 45%);
+  background-color: #fff;
+}
+
+}
+ul li a {
+  cursor: pointer;
+}
+.about {
+  margin-bottom: 15rem;
+}
+.card-cover {
+  padding: 2rem 0rem;
+  border-radius: 15px;
+  height: auto;
+  width: 100%;
+}
+.s {
+  width: 100%;
+  margin: 0 1rem!important;
+}
+
+.contact-input {
+  color:white;
+  border-radius: 5px;
+  padding: 15px 0px 10px 5px;
+  font-size: 20px;
+  width: 100%;
+  outline: 0;
+  border: 0;
+  background-color: rgba(0, 0, 0, 0.76);
+
+}
+.form-btn {
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 5px;
+  margin-top: 1rem;
+  /*text-decoration: none;
+  color: white;
+  width: 100%;
+  font-weight: 500;
+  z-index: 1;*/
+  background-color: hsl(51, 70%, 45%);
+  padding: 10px 30px;
+
+  transition: background-color 0.2s;
+}
+.contact-textarea {
+  color:white;
+  border-radius: 5px;
+  padding: 15px 0px 10px 5px;
+  font-size: 20px;
+  width: 100%!important;
+  min-width: 100%!important;
+  max-width: 100%!important;
+  height: 300px;
+  min-height: 300px;
+  max-height: 600px;
+
+  outline: 0;
+  border: 0;
+  background-color: rgba(0, 0, 0, 0.76);
+
+}
+
+@media (max-width: 1300px) {
+  .container {
+    max-width: 1300px;
+  }
+}
+
+@media (max-width: 992px) {
+  .col-md-4 {
+    width: 49.9%;
+  }
+  .navbar ul {
+    margin-left: 5rem;
+  }
+  .container {
+    max-width: 960px;
+  }
+  .col-md-3 {
+    width: 100%;
+  }
+  .side1 .row {
+    display: inline-block;
+    width: 100%;
+  }
+  .side2 .row {
+    display: inline-block;
+    width: 100%;
+
+  }
+}
+
+@media (max-width: 768px) { 
+  header h1 {
+    text-align: center;
+    font-size: 44px!important;
+  }
+  .container {
+    max-width: 720px;
+  }
+  .navbar ul { 
+    margin-left: 0rem;
+    list-style: none;
+  }
+  .col-md-4 {
+    width: 55.9%!important;
+  }
+
+}
+@media (max-width: 576px) {
+  .services .col-md-4 {
+    margin: 2rem auto !important;
+    width: 87.9% !important;
+  }
+
+  .col-md-4:last-child {
+    margin-left: 0;
+  
+  }
+  .services .col-md-4 {
+    margin: 2rem auto!important;
+    width: 87.9%!important;
+
+  }
+  .col-md-4 {
+    
+    width: 100%!important;
+  }
+  .contact .col-md-4 {
+    
+    margin: none!important;
+    }
+  .col-md-3 {
+    margin: 0!important;
+  }
+
+  footer .row {
+    display: block;
+  }
+  .side1 {
+    width: 100%;
+  }
+  .side2 {
+    width: 100%;
+  
+  }
+   .navopened ul {
+    top: 55px!important;
+
+   }
+  .navopened {
+    background-color: #010606!important;
+  }
+  .navopened .logo {
+    color: #fafafa!important;
+  }
+  .navopened ul li a {
+    color: #010606!important;
+  }
+  .navopened .burger {
+    background-color: #fafafa!important;
+  }
+  .container {
+    width: auto;
+  }
+  header h1 {
+
+    font-size: 44px;
+  }
+  .btn {
+
+    padding:  10px 30px;
+
+  }
+  .container {
+      max-width: 540px; 
+  }
+
+  .button {
+    transform:translateX(0);
+
+  }
+
+  .navbar .logo {
+    display: flex; /* Ensures we can center the image */
+    justify-content: center; /* Horizontally centers the logo */
+    align-items: center; /* Vertically centers the logo */
+    color: rgb(243, 243, 243); /* Text color for any text inside .logo (won't affect the image) */
+    letter-spacing: 2px; /* Letter-spacing for text, if needed */
+    font-weight: 400; /* Text weight (again, for text elements) */
+    margin: 0;
+    font-size: 28px; /* Font size (for text, if you have it) */
+    padding-top: 10px;
+  }
+
+  .burger {
+    background-color: #fafafa;
+  }
+  .navbar {
+    backdrop-filter: none;
+    padding: 10px 0;
+  }
+  .navbar ul { 
+    backdrop-filter: blur(20px);
+
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    margin: 0;
+    padding-top: 10rem;
+    transform: translateX(-100%);
+  }
+
+  .navbar ul li {
+    margin: 2rem 0rem;
+    display: block;
+  }
+  .navbar ul li a {
+    cursor: pointer;
+    font-size: 20px;
+    text-decoration: none;
+    color: #fafafa;
+    font-weight: 500;
+  
+  }
+  .col-md-6 {
+    width: 100%;
+  }
+  .row {
+    display: inline-block;
+  }
+}
+
+.mb-2 {
+  margin-bottom: 2rem!important;
+}
+.mb-1 {
+  margin-bottom: 1rem!important;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 70%;
+  max-width: 8000px;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+  
+}
+
+.about-h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.main-p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.carousel-inner {
+  text-align: center;
+}
+
+/* Adjust the positioning of the logo */
+.logo-img {
+  margin-top: 90px; /* Adjust this value as needed */
+}
+
+.about-h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  
+}
+
+.main-p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.carousel-inner {
+  text-align: center;
+}
+
+.card img {
+  width: 80px; /* Ensure the image stretches to fit the container */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 200px; /* Set a maximum width */
+  margin: 0 auto; /* Center the image */
+  display: block; /* Ensure the image is block-level */
+}
+
+
+.engage-us-spacing {
+  margin-bottom: 6rem; /* Adjust as needed */
+}
+
+
+.adinkra-symbol-text {
+  font-size: 14px;
+  color: #000;
+  text-align: center;
+  margin-top: 5px;
+  font-style: italic;
+}
+
+.service-modal-image {
+  max-width: 100%;   /* Makes sure the image fits within the container */
+  max-height: 400px; /* You can adjust the height as needed */
+  width: auto;       /* Keeps aspect ratio */
+  height: auto;      /* Keeps aspect ratio */
+  display: block;    /* Ensures the image is centered */
+  margin: 0 auto;    /* Centers the image horizontally */
+}
+
+
+.justified-text {
+  text-align: justify;
+}
